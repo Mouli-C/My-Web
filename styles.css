@@ -1,0 +1,153 @@
+/* Basic body styles */ 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('https://wallpapercave.com/wp/wp2639543.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    animation: fadeInBackground 1.5s ease-in-out;
+}
+
+/* Scrolling text animation */
+.scrolling-text {
+    width: 100%;
+    overflow: hidden;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.scrolling-text p {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%; /* Start the text off-screen to the right */
+    font-size: 1.5em;
+    animation: scrollLeft 15s linear infinite; /* Continuous scroll */
+}
+
+/* Keyframes for scrolling text */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(100%); /* Start outside from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* End outside on the left */
+    }
+}
+
+/* Header styles */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: slideInFromTop 1s ease-out;
+}
+
+/* Header Text Styles */
+header h1 {
+    font-size: 2.5em;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h2 {
+    font-size: 2.5em; /* Adjusted size for the second heading */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+/* Navigation Styles */
+nav {
+    margin: 20px;
+}
+
+/* Optimized Button Styles */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Reduced transition time for quicker hover effect */
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background: #555;
+    color: white;
+    transform: scale(1.05); /* Slight scaling on hover for responsiveness */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Background Animation */
+@keyframes fadeInBackground {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-in Animations */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Additional styles for main content */
+main {
+    padding: 20px;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Additional responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    header h2 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+
+    .scrolling-text p {
+        font-size: 1.2em;
+    }
+}
